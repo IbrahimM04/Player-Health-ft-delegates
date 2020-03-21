@@ -8,9 +8,11 @@ public class ChangeUIScript : MonoBehaviour
     public Text healthUI;
     public Button player;
     int health;
-    public HealthScript healthH;
+    public HealthScript _health;
     Color dead = Color.black;
     Color color;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class ChangeUIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        health = healthH.GetHealth();
+        health = _health.GetHealth();
         healthUI.text = "Health: " + health + "/100";
 
         if (health <= 0) {
